@@ -1,6 +1,6 @@
 const app = require('./src/app');
 const { env, port, db } = require('./src/config');
-const { connect, mongoose } = require('./src/database');
+const { connect, mongoose, disconnect } = require('./src/database');
 
 try {
 
