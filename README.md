@@ -96,7 +96,7 @@
         }
         ```
 
-## Folder Structure and naming convention
+## Folder Structure
 
 - `package.json` contains dependencies, node scripts and project description
 - `index.js` entry point of the app
