@@ -8,7 +8,7 @@ exports.getAll = async (req, res) => {
         })
     } catch (error) {
         console.error('ERROR: ', error.message);
-        return res.status(500).json('Internal Server Error')
+        return res.status(error.status || 500).json(error.msg || 'Internal Server Error')
     }
 }
 
@@ -20,6 +20,6 @@ exports.insert = async (req, res) => {
         })
     } catch (error) {
         console.error('ERROR: ', error.message);
-        res.status(500).json('Internal Server Error')
+        return res.status(error.status || 500).json(error.msg || 'Internal Server Error')
     }
 }
