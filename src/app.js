@@ -4,7 +4,7 @@ const cors = require('cors');
 const middlewares = require('./middlewares');
 const controllers = require('./controllers');
 
-const { nonLexicalWordsRoute } = require('./routes')(controllers, middlewares);
+const { densityAnalyzerRoute, nonLexicalWordsRoute } = require('./routes')(controllers, middlewares);
 
 // Enable CORS
 app.use(cors());
@@ -17,6 +17,7 @@ app.use(middlewares.timeLogger);
 app.use(middlewares.requestLogger);
 
 // Routes
+app.use(densityAnalyzerRoute);
 app.use(nonLexicalWordsRoute);
 
 module.exports = app;
